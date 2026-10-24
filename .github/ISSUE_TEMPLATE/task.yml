@@ -1,0 +1,50 @@
+name: Task
+description: One unit of work for one Role.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        After creating, add the matching `role:*` label (and `agent:ok` if ticked). Features, events, and Phases should be generated with `docs/workflow/scripts/create-tasks.mjs` instead.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - producer
+        - design
+        - programmer
+        - builder
+        - 3d
+        - animation
+        - vfx
+        - ui
+        - sound
+        - qa
+        - liveops
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What to do
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checkable by anyone without asking the author.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: input
+    id: blocked
+    attributes:
+      label: Blocked by
+      placeholder: "#12, #15 — or none"
+  - type: checkboxes
+    id: agent
+    attributes:
+      label: Agents
+      options:
+        - label: Suitable for an AI agent (add `agent:ok`)
