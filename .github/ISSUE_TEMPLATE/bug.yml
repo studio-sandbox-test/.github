@@ -58,4 +58,6 @@ body:
   - type: input
     id: versions
     attributes:
-      label: Place version and Source Place version
+      label: Game Version
+      description: Shown in the corner of the screen, e.g. v1.5.0-rc.2. Add the Source Place version if known.
+      placeholder: v1.5.0-rc.2
